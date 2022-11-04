@@ -15,8 +15,8 @@ def KfoldRandomForest(X, Y):
         Y_train, Y_test = Y.iloc[train_index], Y.iloc[test_index]
         model = RandomForestRegressor(
             n_estimators=100,
-            max_depth=10,
-            max_features=4
+            oob_score=True,
+            max_depth=10
         )
         model.fit(X_train, Y_train)
         predictions = model.predict(X_test)
