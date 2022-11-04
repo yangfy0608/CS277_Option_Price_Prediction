@@ -14,16 +14,22 @@ def KfoldRandomForest(X, Y):
         X_train, X_test = X.iloc[train_index], X.iloc[test_index]
         Y_train, Y_test = Y.iloc[train_index], Y.iloc[test_index]
         model = RandomForestRegressor(
-            n_estimators=100,
-            oob_score=True,
-            max_depth=10
+            n_estimators=190,
+            max_depth=12,
+            max_features='log2',
+            random_state=42,
+            min_samples_leaf=1
         )
         model.fit(X_train, Y_train)
         predictions = model.predict(X_test)
         Y_test = np.array(Y_test)
         error += getError(predictions, Y_test)
-    for i in error:
-        print(i/4, "%")
+
+    print("MAE  = ",error[0])
+    print("RMSE = ",error[1])
+    print("MPE  = ",error[2])
+    print("MAPE = ",error[3])
+    
     return
 
 
