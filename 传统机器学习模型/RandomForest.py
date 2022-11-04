@@ -30,7 +30,7 @@ def KfoldRandomForest(X, Y):
 df1 = getdata("UseData.csv")
 
 
-X = df1.drop(['Day', "Value"], axis=1)  # 选择特征值和标签值
+X = df1.drop(["Value"], axis=1)  # 选择特征值和标签值
 Y = df1.Value
 
 KfoldRandomForest(X,Y)

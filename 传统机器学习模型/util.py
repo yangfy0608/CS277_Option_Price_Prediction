@@ -37,6 +37,7 @@ def getError(predictions, test):
 
 def getdata(dataname):
     df = pd.read_csv(dataname)
+    df = df.drop(["Day"], axis=1)
     df = df.dropna()  # 删去无效值
     df.drop(df[(df.rate >= 1.15) | (df.rate < 0.85)].index, inplace=True)
     return df
