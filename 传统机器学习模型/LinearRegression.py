@@ -30,19 +30,18 @@ def KfoldLinearRegression(X, Y, kfold):
         error += getError(predictions*10000, Y_test*10000)
     return error/5
 
+if __name__== "__main__" :
+    df1 = getdata("UseData.csv")
 
-df1 = getdata("UseData.csv")
+    X = df1.drop(["Day","Value"], axis=1)  # 选择特征值和标签值
+    Y = df1.Value
 
+    kfolds_regresssion = KFold(n_splits=5, random_state=1, shuffle=True)
 
-X = df1.drop(["Day","Value"], axis=1)  # 选择特征值和标签值
-Y = df1.Value
-
-kfolds_regresssion = KFold(n_splits=5, random_state=1, shuffle=True)
-
-simpleLinearRegression(X, Y)
-error = KfoldLinearRegression(X, Y, kfold=kfolds_regresssion)
-print("###############Error of LinearRegression###########")
-print("MAE  = ", error[0])
-print("RMSE = ", error[1])
-print("MPE  = ", error[2])
-print("MAPE = ", error[3])
+    simpleLinearRegression(X, Y)
+    error = KfoldLinearRegression(X, Y, kfold=kfolds_regresssion)
+    print("###############Error of LinearRegression###########")
+    print("MAE  = ", error[0])
+    print("RMSE = ", error[1])
+    print("MPE  = ", error[2])
+    print("MAPE = ", error[3])

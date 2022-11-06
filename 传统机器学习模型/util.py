@@ -42,7 +42,6 @@ def getError(predictions, test):  # 得到误差
 
 def getdata(dataname):  # 获取数据
     df = pd.read_csv(dataname)
-    df = df.drop(["Day"], axis=1)
     df = df.dropna()  # 删去无效值
     df.drop(df[(df.rate >= 1.15) | (df.rate < 0.85) | (df.Value<=0)].index, inplace=True)
     return df

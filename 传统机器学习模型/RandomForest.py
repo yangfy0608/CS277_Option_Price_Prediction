@@ -28,16 +28,16 @@ def KfoldRandomForest(X, Y, kfold):
     return error/5
 
 
-df1 = getdata("UseData.csv")
+if __name__ == "__main__":
+    df1 = getdata("UseData.csv")
 
+    X = df1.drop(["Day", "Value"], axis=1)  # 选择特征值和标签值
+    Y = df1.Value
+    kfolds_regresssion = KFold(n_splits=5, random_state=42, shuffle=True)
 
-X = df1.drop(["Day","Value"], axis=1) # 选择特征值和标签值
-Y = df1.Value
-kfolds_regresssion = KFold(n_splits=5, random_state=42, shuffle=True)
-
-error = KfoldRandomForest(X, Y, kfolds_regresssion)
-print("#############Error of Random Forest################")
-print("MAE  = ", error[0])
-print("RMSE = ", error[1])
-print("MPE  = ", error[2])
-print("MAPE = ", error[3])
+    error = KfoldRandomForest(X, Y, kfolds_regresssion)
+    print("#############Error of Random Forest################")
+    print("MAE  = ", error[0])
+    print("RMSE = ", error[1])
+    print("MPE  = ", error[2])
+    print("MAPE = ", error[3])
