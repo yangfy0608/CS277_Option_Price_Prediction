@@ -21,6 +21,7 @@ def KfoldRandomForest(X, Y, kfold):
             min_samples_leaf=1
         )
         model.fit(X_train, Y_train)
+        print(model.coef_)
         predictions = model.predict(X_test)
         Y_test = np.array(Y_test)
         error += getError(predictions, Y_test)

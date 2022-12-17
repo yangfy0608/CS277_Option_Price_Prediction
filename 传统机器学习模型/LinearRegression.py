@@ -25,6 +25,7 @@ def KfoldLinearRegression(X, Y, kfold):
         Y_train, Y_test = Y.iloc[train_index], Y.iloc[test_index]
         model = LinearRegression()
         model.fit(X_train, Y_train)
+        print(model.coef_)
         predictions = model.predict(X_test)
         Y_test = np.array(Y_test)
         error += getError(predictions*10000, Y_test*10000)
