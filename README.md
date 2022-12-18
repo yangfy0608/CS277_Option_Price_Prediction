@@ -3,14 +3,14 @@ This code is for the project "Option Price Prediction" in CS277, ShanghaiTech Un
 Authors: Chenhao Jiang, Jiarui Kou, Fuyi Yang, Jiawen Yang
 
 ## Introduction
-```
+
 Option is the right to buy or sell a certain amount of basic commodities at a time allowed in the future obtained by the purchaser after paying a certain option fee. Option price is the only variable in the option contract that changes with market supply and demand. Its level directly affects the profit and loss of both buyers and sellers, and is the core issue of option trading. 
-```
+
 
 ## What tasks do our code solve?
-```
+
 We plan to build a new option pricing model based on the traditional parametric option pricing model by introducing a combination of non-parametric machine learning models to obtain higher prediction accuracy of option pricing. Based on the call option data of Shanghai 50ETF, this paper comprehensively compares the prediction results of option pricing by parametric models and non-parametric machine learning models, in order to study the advantages and disadvantages of each option pricing model.
-```
+
 
 ## Code Structure
 ```
@@ -39,6 +39,6 @@ We plan to build a new option pricing model based on the traditional parametric 
 ```
 
 ## Conclusion
-```
+
 Ultimately, the best performing parametric and nonparametric models are combined to achieve optimal results. Due to the different types of models, the combination here cannot perform model fusion in the traditional sense, so we use the output of the parameter model as the input of the machine learning model to improve the prediction accuracy. 
-```
+
