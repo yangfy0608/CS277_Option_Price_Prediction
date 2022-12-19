@@ -63,7 +63,7 @@ Ultimately, the best performing parametric and nonparametric models are combined
 value.
 <br> Run the code by:
 ```
-	python BlackSholes.py
+python BlackSholes.py
 ```
 
 + Method2: MonteCarlo
@@ -73,7 +73,7 @@ as possible, calculate the average option return under each
 path, and then discount the option price. 
 <br> Run the code by:
 ```
-	python MonteCarlo.py
+python MonteCarlo.py
 ```
 
 + Method3: Merton
@@ -83,7 +83,7 @@ in market transactions, the price of the underlying asset tends
 to jump suddenly due to unexpected events 
 <br> Run the code by:
 ```
-	python Merton.py
+python Merton.py
 ```
 
 ### Non-Parametric Model
@@ -91,13 +91,13 @@ to jump suddenly due to unexpected events
 >A linear regression model is used to predict the theoretical value of option prices, and a loss function is used to control the linear regression model.
 <br>Run the code by:
 ```
-	python LinearRegression.py
+python LinearRegression.py
 ```
 + Method2: RandomForest
 > A random sample is aggregated from the original set to generate a set of data, each set is predicted, and the final prediction is determined by the mean method. 
 <br>Run the code by:
 ```
-	python RandomForest.py
+python RandomForest.py
 ```
 + Method3: LGBM with Genetic Algorithm
 > Boosting prediction model is a type of serial integrated learning, where multiple individual learners with strong depen-
@@ -105,7 +105,7 @@ dencies are generated serially and then combined into a single
 module to complete learning. 
 <br>Run the code by:
 ```
-	python GA.py
+python GA.py
 ```
 
 ### Evaluations
