@@ -114,7 +114,7 @@ to evaluate model predictions:
 + Mean Absolute Deviation(MAE)
   
     $MAE =\frac{1}{n}\sum_{i=1}^n\lvert
-    C_i-C_i^{real}\rvert;$
+    C_i-C_i^{real}\rvert$
 
 + Root Mean Square Error(RMSE):
 
